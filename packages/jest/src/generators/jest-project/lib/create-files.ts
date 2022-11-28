@@ -31,11 +31,6 @@ export function createFiles(tree: Tree, options: JestProjectSchema) {
     offsetFromRoot: offsetFromRoot(projectConfig.root),
   });
 
-  if (options.rootProject) {
-    // if the project is a root project,
-    // then we need to set the root jest.config.ts to be what would normally be in the project level instead of the root one
-    // if it's not a root project we need to make sure that the root jest.config.ts correctly has the monorepo setup support
-  }
   if (options.setupFile === 'none') {
     tree.delete(join(projectConfig.root, './src/test-setup.ts'));
   }
